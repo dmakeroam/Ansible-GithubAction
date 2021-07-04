@@ -1,0 +1,18 @@
+.Button {
+    border: 0;
+    width: 420px;
+    height: 80px;
+    border-radius: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 500;
+    transition: .3s ease-out;
+    background-color: #DCA04D;
+    &:hover {
+        background-color: #B67F34;
+    }
+
+    &:focus, :active {
+        outline: none;
+    }
+}

@@ -1,0 +1,2 @@
+[helloworld]
+helloworld-dev ansible_host=52.230.32.242 ansible_user="{{ssh_user}}" hostname="helloworld-dev"

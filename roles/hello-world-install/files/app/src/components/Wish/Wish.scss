@@ -1,0 +1,195 @@
+#Wish {
+    display: flex;
+  	justify-content: center;
+  	align-items: center;
+    background: url('../../static/img/iceberg.png') no-repeat left bottom;
+    background-color: #9AC0CB;
+    background-size: 100%;
+    min-height: 100%;
+
+    .Wish {
+        &__header {
+            // margin-top: 15%;
+            h1 {
+                font-size: 50px;
+                font-family: 'Cardo', serif;
+                font-weight: 700;
+                line-height: 180%;
+                color: #000000;
+                text-shadow: 2px 2px 5px rgba(#000, .7);
+            }
+        
+            p {
+                font-family: 'Cardo', serif;
+                font-size: 28px;
+                font-weight: 400;
+                text-shadow: 2px 2px 6px #FFFFFF;
+            }
+        }
+
+        &__container {
+            margin: 7vh 0;
+            max-width: 80%;
+
+            img {
+                width: 400px;
+                animation: animate-pulse 3s infinite;
+                margin: 1em 0;
+            }
+        }
+
+        &__button {
+            display: block;
+            margin: 0 auto;
+            background:url('../../static/img/button/wish_button.png') no-repeat;
+            background-size: 100%;
+            cursor: pointer;
+            width: 525px;
+            height: 160px;
+            transition: .2s ease-out;
+
+            &:hover {
+                filter: drop-shadow(0px 4px 4px#DCA04D);
+                transform: scale(1.02);
+            }
+
+            &:active {
+                transition: none;
+                background: url('../../static/img/button/wish_button_clicked.png') no-repeat;
+                background-size: 100%;
+                width: 525px;
+                height: 166px;
+            }
+        }
+    }
+
+    .wishes-whale {
+        position: absolute;
+        z-index: 2;
+
+        .landscape {
+            animation: whale-idle 2s infinite;
+            width: 90%;
+        }
+
+        .portrait {
+            animation: whale-idle 2s infinite;
+            width: 80%;
+        }
+    }
+
+    .fadeBlack {
+        // display: none;
+        position: fixed;
+        background: rgba(0, 0, 0, .5);
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
+
+    @media screen and (max-width: 1440px) {
+        .Wish__header {
+            h1 { font-size: 44px; }
+            p { font-size: 24px; }
+        }
+        .Wish__container img { width: 300px; }
+        .Wish__button { 
+            width: 350px; 
+            &:active { width: 350px; }
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        .Wish__header {
+            h1 { font-size: 38px; }
+            p { font-size: 22px; }
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        .Wish__header {
+            h1 { font-size: 28px; }
+            p { font-size: 16px; }
+        }
+        .Wish__container img { width: 250px; }
+    }
+
+    @media screen and (max-width: 425px) {
+        .Wish__header {
+            h1 { font-size: 20px; }
+            p { font-size: 16px; }
+        }
+        .Wish__container img { width: 200px; }
+        .Wish__button { 
+            width: 320px; 
+            &:active { width: 320px; }
+        }
+    }
+
+    @media screen and (max-width: 320px) {
+        .Wish__header {
+            h1 { font-size: 20px; }
+            p { font-size: 16px; }
+        }
+        .Wish__container img { width: 180px; }
+        .Wish__button { 
+            width: 250px; 
+            &:active { width: 250px; }
+        }
+    }
+
+    // @media screen and (max-width: 500px) {
+    //     .Wish__container img {
+    //         width: 250px;
+    //     }
+    //     .Wish__button {
+    //         width: 250px;
+    //         height: 100px;
+    //         &:active {
+    //             width: 250px;
+    //             height: 100px;
+    //         }
+    //     }
+    // }
+
+    // @media screen and (max-width: 420px) {
+    //     .Wish__container img {
+    //         width: 200px;
+    //     }
+    // }
+}
+
+#wish-area {
+    resize: none;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #cecece;
+    transition: .2s  ease-out;
+
+    &:focus {
+        border: 1px solid #a3a3a3;
+    }
+}
+
+@keyframes animate-pulse {
+    50% {
+        transform: scale(1.1) rotateZ(5deg);
+    }
+
+    100% {
+        transform: scale(1.0);
+    }
+}
+
+@keyframes whale-idle {
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1.0);
+    }
+}

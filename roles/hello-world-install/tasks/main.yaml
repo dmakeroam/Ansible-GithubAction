@@ -1,0 +1,67 @@
+- name: Creates hello directory
+  file:
+    path: "{{ item }}"
+    state: directory
+    recurse: yes
+    mode: u=rwx,g=r,o=r
+    owner: Helloworld
+    group: Helloworld
+  with_items:
+  - /home/Helloworld/Compose
+
+- name: Copy hello app file
+  synchronize:
+    src: "../files/app/"
+    dest: "/home/Helloworld/Compose/"
+    archive: yes
+    recursive: yes
+    mode: push
+
+- name: grant privilleges to hello directory
+  file:
+    path: "{{ item }}"
+    state: directory
+    recurse: yes
+    mode: u=rwx,g=r,o=r
+    owner: Helloworld
+    group: Helloworld
+  with_items:
+  - /home/Helloworld/Compose
+
+- name: Init yarn node modules
+  shell: "/home/Helloworld/.nvm/versions/node/v16.4.0/bin/yarn install"
+  args:
+    chdir: "/home/Helloworld/Compose"
+
+- name: Build hello app
+  shell: "/home/Helloworld/.nvm/versions/node/v16.4.0/bin/yarn build"
+  args:
+    chdir: "/home/Helloworld/Compose"
+
+- name: Copy hello conf file
+  copy:
+    src: "../files/hello.conf"
+    dest: "/home/Helloworld/Compose/build/hello.conf"
+    mode: u=rwx,g=r,o=r
+    owner: Helloworld
+    group: Helloworld
+
+- name: Copy hello compose file
+  copy:
+    src: "../files/docker-compose.yaml"
+    dest: "/home/Helloworld/Compose/build/docker-compose.yaml"
+    mode: u=rwx,g=r,o=r
+    owner: Helloworld
+    group: Helloworld
+
+- name: Up hello container
+  shell: "docker compose -f /home/Helloworld/Compose/build/docker-compose.yaml up --quiet-pull --no-color --force-recreate -d"
+
+- name: List the container id
+  shell: "docker ps -q -f name=test"
+  register: container
+
+- name: Verify if the container is running
+  fail: 
+    msg: "The hello app container is not running"
+  when: container.stdout == ""

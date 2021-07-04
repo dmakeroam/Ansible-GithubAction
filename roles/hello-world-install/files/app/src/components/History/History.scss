@@ -1,0 +1,83 @@
+#History {
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+	background-color: #274B6D;
+	position: relative;
+	  
+	.History__container {
+		margin-top: 5vh;
+		padding: 2em;
+		color: #ffffff;
+		max-width: 90%;
+
+		h1 {
+			font-family: 'Crimson Text', serif;
+			font-weight: 700;
+			font-size: 3rem;
+			color: #fff;
+			text-shadow: 2px 2px 5px rgba(#000, .7);
+			margin-bottom: 1.2rem;
+		}
+
+		p {
+			position: relative;
+			column-count: 2;
+			column-gap: 4em;
+			font-family: 'Cardo', serif;
+			font-size: 16pt;
+			color: #CED9DF;
+			text-indent: 50px;
+			text-align: justify;
+			z-index: 2;
+			text-shadow: 1px 1px 2px rgba(#000, .7);
+		}
+  	}
+  
+  	.History__gallery {
+		box-sizing: border-box;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding: 1.5rem;
+	}
+
+	@media screen and (max-width: 669px) {
+		.History__gallery { justify-content: center }
+	}
+	  
+	@media screen and (max-width: 798px) {
+		.History__container {
+			h1 { font-size: 2rem; }
+			p { 
+				column-count: 1;
+				font-size: 15pt;
+			}
+		}
+	}
+
+	@media screen and (max-width: 1438px) {
+		.History__gallery {
+			* {
+				flex: 1 1 30vw;
+			}
+		}
+	}
+}
+
+.waterdrop {
+	img {
+		position: absolute;
+		width: 50px;
+		top: -.5in;
+		right: 4in;
+		animation: animateWater 5s linear infinite;
+	}
+
+	img + img {
+		position: absolute;
+		width: 70px;
+		right: 1in;
+		top: 3in;
+	}
+}

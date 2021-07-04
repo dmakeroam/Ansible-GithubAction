@@ -1,0 +1,101 @@
+#Footer{
+    color: #ffffff;
+    position: relative;
+    background: url('../../static/img/about-us/props-bg.png') no-repeat;
+    background-position: bottom right;
+    background-size: 100%;
+    background-color: #6E0E29;
+    font-family: 'Playfair Display', serif;
+
+    .big-bell{
+        position: absolute;
+        bottom: 0;
+        left: -1.3in;
+        width: 20%;
+        z-index: 1;
+    }
+
+    .bell {
+        position: absolute;
+        width: 50px;
+        top: -10%;
+        left: 20%;
+        transform: rotateZ(30deg);
+        z-index: 1;
+    }
+
+    .bell2 {
+        position: absolute;
+        width: 50px;
+        top: -10%;
+        left: 55%;
+        transform: rotateZ(-30deg);
+        z-index: 1;
+    }
+
+    .tree {
+        position: absolute;
+        width: 50px;
+        top: -10%;
+        left: 75%;
+        transform: rotateZ(30deg);
+        z-index: 0;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .big-bell { top: -1in; }
+    }
+
+    @media screen and (max-width: 768px) {
+        .big-bell { left: -1in; }
+    }
+
+    @media screen and (max-width: 500px) {
+        .big-bell { display: none; }
+    }
+}
+
+.Footer {
+    &__container {
+        margin: 0 auto;
+        max-width: 80%;
+        padding: 1.2rem;
+
+        ul{
+            list-style: none;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            min-height: 339px;
+    
+            img {
+                display: block;
+                width: 100px;
+                border-radius: 50px;
+                transition: .3s ease-out;
+                z-index: 5;
+                &:hover {
+                    transform: scale(1.1) translateY(-10px);
+                    box-shadow: 0px 0px 20px #DCA04D;
+                }
+            }
+    
+            li {
+                line-height: 12px;
+            }
+    
+            .info {
+                margin: 1.5rem 0;
+            }
+    
+            .name {
+                font-size: 20px;
+                
+            }
+            .work {
+                font-size: 18px;
+            }
+        }
+    }
+}

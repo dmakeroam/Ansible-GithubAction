@@ -1,0 +1,5 @@
+- hosts: helloworld
+  become: yes
+  roles:
+  - role: 'hello-world-install'
+  gather_facts: no

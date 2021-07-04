@@ -1,0 +1,228 @@
+#Countdown {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    background: url('../../static/img/background/countdown.jpg') no-repeat;
+    background-position: bottom;
+    background-color: #274B6D;
+    background-size: 100%;
+
+    h1 {
+        color: white;
+        text-align: center;
+        margin: 2rem 0;
+        font: bold 8vw 'Playfair Display', serif;
+        text-shadow: 2px 2px 5px rgba(#000, .7);
+        letter-spacing: .1em;
+    }
+
+    .waterdrop {
+        img {
+            position: absolute;
+            width: 155px;
+            top: -.5in;
+            right: 1in;
+            animation: animateWater 5s linear infinite;
+        }
+
+        img + img {
+            position: absolute;
+            width: 100px;
+            left: 1in;
+            top: 1in;
+        }
+        img + img + img {
+            position: absolute;
+            width: 70px;
+            left: 30vw;
+            top: -.5in;
+        }
+    }
+
+    .Countdown {
+        &__container {
+            max-width: 80%;
+        }
+
+        &__box {
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            padding: 1em 5em;
+            
+            .Countdown__item {
+                font-family: 'Karla', sans-serif;
+                color: var(--light-color);
+                font-size: 48px;
+                height: 100%;
+                padding: 5% 20px;
+
+                .title {
+                    font-size: 40px;
+                    font-weight: 500;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 15px;
+                }
+    
+                .timer {
+                    background: rgba(162, 159, 159, 0.75);
+                    // padding: 0 1rem;
+                    font-size: 150px;
+                    border-radius: 20px;
+                    width: 220px;
+                }
+
+                @media screen and (max-width: 1303px) {
+                    .title { font-size: 40px; }
+                    .timer {
+                        font-size: 100px;
+                        width: 150px;
+                    }
+                }
+
+                @media screen and (max-width: 953px) {
+                    .title { font-size: 28px; }
+                    .timer {
+                        font-size: 70px;
+                        width: 100px;
+                    }
+                }
+
+                @media screen and (max-width: 709px) {
+                    .title { font-size: 22px; }
+                    .timer {
+                        font-size: 50px;
+                        width: 80px;
+                    }
+                }
+
+                @media screen and (max-width: 600px) {
+                    .title { font-size: 28px; }
+                    .timer {
+                        font-size: 80px;
+                        width: 120px;
+                    }
+                }
+                @media screen and (max-width: 370px) {
+                    .title { font-size: 20px; }
+                    .timer {
+                        font-size: 40px;
+                        width: 90px;
+                    }
+                }
+            }
+
+            #candycane {
+                position: absolute;
+                width: 120px;
+                right: -30px;
+                top: -15px;
+            }
+
+            #lightwire {
+                position: absolute;
+                width: 400px;
+                left: 10px;
+                top: 5px;
+                transform: rotateZ(-20deg);
+            }
+
+            @media screen and (max-width: 952px) {
+                #lightwire {
+                    width: 250px;
+                }
+            }
+
+            @media screen and (max-width: 600px) {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            @media screen and (max-width: 340px) {
+                #candycane {
+                    width: 90px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        .waterdrop img, #lightwire { display: none; }
+    }
+
+    @media screen and (max-width: 768px) {
+        .waterdrop img { width: 100px }
+    }
+}
+
+@keyframes animateWater {
+    25% {
+        transform: translateY(10px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    75% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.santawhale1 {
+    position: absolute;
+    height: 200px;
+    animation: animateWhale1 10s linear infinite;
+}
+
+.santawhale2 {
+    display: block;
+    position: absolute;
+    height: 300px;
+    bottom: 0;
+    animation: animateWhale2 10s linear infinite;
+}
+
+@keyframes animateWhale1 {
+    0% {
+        transform: rotateZ(0deg); right:0%;
+        opacity: 0;
+    }
+    25% {
+        transform: rotateZ(-10deg) translateY(90px); right:30%;
+        opacity: 1;
+    }
+    50% {
+        transform: rotateZ(0deg); right:60%;
+    }
+    75% {
+        transform: rotateZ(-15deg) translateY(70px); right:100%;
+    }
+    100% {
+        transform: rotateZ(0deg); right:120%;
+    }
+}
+
+@keyframes animateWhale2 {
+    0% {
+        transform: rotateZ(0deg); left:-30%;
+    }
+    25% {
+        transform: rotateZ(10deg) translateY(50px); left:20%;
+    }
+    50% {
+        transform: rotateZ(0deg); left:60%;
+    }
+    75% {
+        transform: rotateZ(15deg) translateY(40px); left:60%;
+    }
+    100% {
+        transform: rotateZ(0deg); left:120%;
+    }
+}

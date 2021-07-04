@@ -1,0 +1,65 @@
+/* 
+  CSS Variable
+  ปล.จะได้ง่ายต่อการคุมโทนสี
+ */
+ @import url('https://fonts.googleapis.com/css2?family=Cardo&family=Crimson+Text:wght@400;700&family=Playfair+Display:wght@400;700&family=Karla:wght@700&display=swap');
+// font-family: 'Cardo', serif;
+// font-family: 'Crimson Text', serif;
+// font-family: 'Playfair Display', serif;
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@700&display=swap');
+// font-family: 'Karla', sans-serif;
+
+:root {
+  --primary-color:#6E6E6E;
+  --secondary-color: #C4C4C4;
+  --light-color: #FFFF;
+  --dark-color: #4E4E4E;
+  --shadow-header: 7px 7px 0px #8C0200;
+  
+  // Font-size variable
+  --fs-header: 85pt;
+  --fs-header-alt: 48pt;
+  --fs-title: 28pt;
+  --fs-menu-bar: 28pt;
+  --fs-caption: 18pt;
+  --fs-button: 40pt;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+// Scrollbar Styled
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8C0200;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:#770301;
+}

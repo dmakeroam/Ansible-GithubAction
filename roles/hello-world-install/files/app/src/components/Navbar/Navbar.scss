@@ -1,0 +1,104 @@
+.Navbar {
+    position: fixed;
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    transition: height .3s ease-in-out;
+    z-index: 99;
+    background-color: rgba(#000000, .2);
+
+    &__logo {
+        margin-top: 1.4%;
+        margin-left: 5%;
+        height: 120%;
+        align-self: center;
+        transition: .1s ease-out;
+    }
+
+    &__menu {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        font-family: 'Playfair Display', serif;
+        height: 100%;
+        width: 100%;
+        color: var(--light-color);
+    }
+    
+    &__item {
+        font-size: 28px;
+        margin: 0 1.5em;
+        text-decoration: none;
+        transition: .2s ease-out;
+        color: #ffff;
+        margin: 0 50px;
+
+        &:hover {
+            color: red;
+            text-decoration: none;
+        }
+    }
+
+    .hamburger {
+        display: none;
+        z-index: 1;
+        top: 35%;
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 1173px) {
+        .hamburger {
+            display: block;
+        }
+
+        .Navbar {
+            &__menu {
+                flex-flow: column nowrap;
+                background: rgb(40, 40, 40);
+                position: fixed;
+                line-height: 60px;
+                top: 0;
+                right: 0;
+                height: 100vh;
+                width: 300px;
+                transform: translateX(0);
+                transition: transform .3s ease-out;
+            }
+        }
+
+        .hide {
+            transform: translateX(100%);
+        }
+    }
+
+    @media (max-width: 420px) {
+        .Navbar__menu {
+            width: 200px;
+
+            .Navbar__item {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+.is-current {
+    color: #DCA04D;
+}
+
+.scrolled {
+    
+    height: 65px;
+    background-color: rgba(#000000, .8);
+
+    .Navbar__logo {
+        margin-top: 1.1%;
+    }
+
+    img {
+        transform: scale(0.95);
+    }
+}
